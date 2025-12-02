@@ -41,7 +41,6 @@
 
       body {
         font-family: 'Noto Sans TC', sans-serif;
-        /* 背景改為放射狀能量線條感 */
         background: repeating-radial-gradient(
           circle at 50% -20%,
           var(--db-yellow),
@@ -52,7 +51,7 @@
         color: var(--db-dark);
         overflow-x: hidden;
         padding-bottom: 20px;
-        font-weight: 900; /* 全局超粗體 */
+        font-weight: 900;
         letter-spacing: 0.5px;
       }
 
@@ -74,7 +73,6 @@
         background: var(--db-blue);
         color: var(--db-yellow);
         padding: 5px 20px;
-        /* 尖銳切角造型 */
         clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
         font-size: 1.2rem;
         text-transform: uppercase;
@@ -158,7 +156,7 @@
         letter-spacing: 2px;
       }
 
-      /* === 建議區：修正字體清晰度 === */
+      /* === 建議區 === */
       .advice-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -202,17 +200,15 @@
         filter: drop-shadow(0 2px 0 var(--db-dark));
       }
 
-      /* [修正] 移除描邊，改用亮色字體+硬陰影 */
       .advice-text {
         font-size: 1.4rem;
-        color: var(--db-yellow); /* 金色字體 */
+        color: var(--db-yellow);
         margin: 5px 0;
         line-height: 1.2;
-        -webkit-text-stroke: 0; /* 移除描邊 */
-        text-shadow: 2px 2px 0 var(--db-dark); /* 加上硬陰影 */
+        -webkit-text-stroke: 0;
+        text-shadow: 2px 2px 0 var(--db-dark);
       }
       
-      /* [修正] 小字改成純白，移除透明度 */
       .advice-sub {
           font-size: 0.85rem;
           color: white; 
@@ -308,7 +304,7 @@
         margin-top: 5px;
       }
 
-      /* Loading 畫面 */
+      /* === Loading 畫面 (已修正) === */
       .loading-screen {
         position: fixed;
         top: 0;
@@ -323,12 +319,16 @@
         z-index: 999;
       }
       
+      /* [修正] 字體改為深藍色 + 白色陰影，移除模糊的描邊 */
       .loading-text {
-          color: var(--db-dark);
-          font-size: 1.5rem;
+          color: var(--db-blue); /* 深藍色 */
+          font-size: 1.6rem;
           margin-top: 30px;
           text-transform: uppercase;
-          -webkit-text-stroke: 1px var(--db-orange);
+          font-weight: 900;
+          letter-spacing: 1px;
+          -webkit-text-stroke: 0; /* 移除描邊 */
+          text-shadow: 2px 2px 0px white, 3px 3px 0px rgba(0,0,0,0.1); /* 白色硬陰影 */
       }
     </style>
   </head>
@@ -338,7 +338,7 @@
       <div
         style="
           font-size: 6rem;
-          filter: drop-shadow(0 0 20px gold);
+          filter: drop-shadow(0 0 20px white);
           animation: powerUpBounce 0.5s infinite;
           color: gold;
         "
